@@ -227,6 +227,51 @@ git config --global user.email &quot;你的GitHub注册邮箱&quot;
 <p>注册成功后点击GitHub中的New repository创建新仓库，仓库名应该为：用户名.github.io 这个用户名使用你的GitHub帐号名称代替，这是固定写法，比如我的仓库名为：<br><img src="img/7.png" alt="img7">  </p>
 <h4 id="第三步-PC端安装Node-js"><a href="#第三步-PC端安装Node-js" class="headerlink" title="第三步 PC端安装Node.js"></a>第三步 PC端安装Node.js</h4><p>去<a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">node.js官网</a>下载安装Node.js，注意环境变量配置，win10应该是自动添加的，然后检测是否安装成功输入<code>node -v</code><br><img src="img/8.png" alt="img8">  </p>
 <p>输入 <code>npm -v</code>检测node.js版本<br><img src="img/9.png" alt="img9"><br>如果上图所示则安装成功。</p>
+<h4 id="第四步：-安装Hexo"><a href="#第四步：-安装Hexo" class="headerlink" title="第四步： 安装Hexo"></a>第四步： 安装Hexo</h4><p>创建一个文件夹并右键点击Git Bash Here打开git bash（因为以下命令都在该目录下运行）<br>使用npm命令安装Hexo，输入：  </p>
+<pre><code>npm install -g hexo-cli
+</code></pre><p>安装完成后 初始化我们的博客</p>
+<pre><code>hexo init blog
+</code></pre><p>为了在本地测试我们的博客网站输入以下三条命令</p>
+<pre><code>hexo new g
+hexo g
+hexo s
+</code></pre><p>执行完后，打开浏览器输入地址：<code>localhost:4000</code>  </p>
+<p>成功后会显示网页（下图显示是我修改了主题和标题后的图片）<br><img src="img/10.png" alt="img10"><br>如果网页未显示或者加载不出，解决方法见后。</p>
+<h4 id="第五步：-推送博客至github"><a href="#第五步：-推送博客至github" class="headerlink" title="第五步： 推送博客至github"></a>第五步： 推送博客至github</h4><p>进入主目录下的config文件<br><img src="img/11.png" alt="img11">  </p>
+<p>打开并编辑该文件修改以下内容，图中红框改为github上的仓库名称，如果按照我前面的设置就是账号名，最后保存配置文件<br><img src="img/12.png" alt="img12">  </p>
+<p>最后安装Git部署插件，输入命令：</p>
+<pre><code>npm install hexo-deployer-git –save
+</code></pre><p>为了将博客部署至github仓库，输入接下来三条命令（最后两条也可以合成<code>hexo g –d</code>）：</p>
+<pre><code>hexo clean 
+hexo g 
+hexo d
+</code></pre><p>部署成功后就可以用 用户名.github.io访问你的网站了</p>
+<h4 id="第六步：-绑定域名"><a href="#第六步：-绑定域名" class="headerlink" title="第六步： 绑定域名"></a>第六步： 绑定域名</h4><p>虽然我们可以用已有的github的域名但是如果想要一个个性化的域名，那么就需要注册一个新的域名，我选择的是阿里云提供的域名服务，注册登录阿里云账号，下拉网页并点击“域名与网站”并选择“域名注册”，注册域名并按要求进行身份验证(身份验证可能需要等一段时间）<br><img src="img/14.png" alt="img14"> </p>
+<p>验证成功后，点击网页最上方导航栏的“控制台“，并在页面左边菜单中选中域名<br><img src="img/15.png" alt="img15"> </p>
+<p>然后在网页中对域名进行解析<br><img src="img/16.png" alt="img16"> </p>
+<p>然后添加两条记录，一条是域名间的映射（即新域名和github域名的映射，一条是和IP地址的映射，github域名对应的IP地址（可以通过在cmd中输入<code>ping http://xxxx.github.io</code> 得到域名对应的IP地址），然后填入进去<br><img src="img/17.png" alt="img17"> </p>
+<p>然后登录GitHub，进入之前创建的仓库，点击settings，设置Custom domain，输入你的域名<br><img src="img/18.png" alt="img18"> </p>
+<p>点击save保存。然后进入本地博客文件夹 ，进入source目录下，创建一个记事本文件，输入你的域名，对，只要写进你自己的域名即可。如果带有www，那么以后访问的时候必须带有www完整的域名才可以访问，但如果不带有www，以后访问的时候带不带www都可以访问。所以建议，不要带有www。这里我还是写了www(不建议带有www)，最后记得文件格式保存为所有文件而不是.txt文件。<br><img src="img/19.png" alt="img19"><br><img src="img/20.png" alt="img20"> </p>
+<p>完成这三步，进入本地博客目录中，右键打开Git Bash，依次输入：</p>
+<pre><code>hexo clean
+hexo g
+hexo d
+</code></pre><p>这时候打开浏览器在地址栏输入你的个性化域名将会直接进入你自己搭建的网站。</p>
+<h4 id="第七步：-更换主题"><a href="#第七步：-更换主题" class="headerlink" title="第七步： 更换主题"></a>第七步： 更换主题</h4><p>点击<a href="https://hexo.io/themes/" target="_blank" rel="noopener">hexo主题网址</a>搜索,选择并点击你喜欢的主题的名称进入主题的github界面，复制顶部的url，在博客文件夹路径下执行（右键博客文件夹打开的bash,便自动在博客文件夹下，bash中可以看到当前路径，如果不在就cd进去）然后执行</p>
+<pre><code>git clone https://github.com/klugjo/hexo-theme-clean-blog （你喜欢博客主题github界面的 url）
+</code></pre><p><img src="img/21.png" alt="img21">  </p>
+<p>此时你打开本地博客文件夹的themes目录会发现多了一个主题文件，即刚下载的主题<br><img src="img/22.png" alt="img22">  </p>
+<p>打开主目录下的_config.yml配置文件，修改主题为clean-blog<br><img src="img/23.png" alt="img23"> </p>
+<p>紧接着修改主题文件中的_config.yml配置文件，里面可以添加和设置你的导航目录，菜单名称等等，具体设置看你刚才所打开的主题的github界面下面有关配置的详细介绍,如图：<br><img src="img/24.png" alt="img24"> </p>
+<p>选择好后，依次输入</p>
+<pre><code>hexo g 
+hexo d
+</code></pre><p>重新部署网站并查看效果。</p>
+<hr>
+<h4 id="可能遇到的问题"><a href="#可能遇到的问题" class="headerlink" title="可能遇到的问题"></a>可能遇到的问题</h4><p><strong>Q1</strong>：输入localhost:4000没有响应<br><strong>A1</strong>：端口被福昕阅读器的进程占用<br>如图用命令查看端口状态 发先localhos:4000被进程号（PID）为22908的进程占用<br><img src="img/25.png" alt="img25"> </p>
+<p>在任务管理器中查看进程号22908 发现被福昕的进程占用<br><img src="img/26.png" alt="img26">  </p>
+<p><strong>解决方法一</strong>：右键点击服务并禁止<br><strong>解决方法二</strong>：在本地测试hexo时候，用命令<code>hexo s -p 5000</code> 更换端口（此处更换为5000），然后用<code>localhost:5000</code>再访问</p>
+<p><strong>Q2</strong>： 执行hexo d后要求输入账号和密码 输入正确信息后在浏览器地址栏输入你的放置个人网站的仓库路径，即 <code>http://xxxx.github.io</code> 出现404错误<br><strong>A2</strong>：把_config.yml文件中<code>repository: https://github.com/xxxx/xxxx.github.io.git</code>这个地址改为<a href="mailto:`git@github.com" target="_blank" rel="noopener">`git@github.com</a>:xxxx/xxxx.github.io.git`(xxxx是在github上设置的仓库名称，一般是用户名)</p>
 
 
                 

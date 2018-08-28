@@ -213,7 +213,7 @@
 <li>更换主题  </li>
 </ol>
 <hr>
-<h4 id="具体步骤"><a href="#具体步骤" class="headerlink" title="具体步骤"></a>具体步骤</h4><h5 id="第一步-安装Git"><a href="#第一步-安装Git" class="headerlink" title="第一步  安装Git"></a>第一步  安装Git</h5><p>Git是个开源的分布式版本管理系统，可以敏捷高效的处理各种项目。GitHub是一个远程仓库，方便多人协作完成项目或共享项目，大家可以从GitHub上下载和完善你的代码。<br>安装包下载地址：<a href="https://gitforwindows.org/" target="_blank" rel="noopener">git地址</a><br><img src="img/1.png" alt="img1"><br>完成安装之后，就可以使用命令行的 git 工具，在开始菜单里找到”Git”-&gt;”Git Bash”，会弹出 git 命令窗口，你可以在该窗口进行 git 操作。  </p>
+<h4 id="具体步骤"><a href="#具体步骤" class="headerlink" title="具体步骤"></a>具体步骤</h4><h4 id="第一步-安装Git"><a href="#第一步-安装Git" class="headerlink" title="第一步  安装Git"></a>第一步  安装Git</h4><p>Git是个开源的分布式版本管理系统，可以敏捷高效的处理各种项目。GitHub是一个远程仓库，方便多人协作完成项目或共享项目，大家可以从GitHub上下载和完善你的代码。<br>安装包下载地址：<a href="https://gitforwindows.org/" target="_blank" rel="noopener">git地址</a><br><img src="img/1.png" alt="img1"><br>完成安装之后，就可以使用命令行的 git 工具，在开始菜单里找到”Git”-&gt;”Git Bash”，会弹出 git 命令窗口，你可以在该窗口进行 git 操作。  </p>
 <p>打开界面后如图：<br><img src="img/2.png" alt="img2"><br>安装成功后，将你的git与github帐号绑定，。在命令行中输入   </p>
 <pre><code>git config --global user.name &quot;你的GitHub用户名&quot;
 git config --global user.email &quot;你的GitHub注册邮箱&quot;
@@ -223,10 +223,10 @@ git config --global user.email &quot;你的GitHub注册邮箱&quot;
 <p>打开GitHub_Settings_keys页面，新建new SSH Key，输入title（自拟）和key（将刚才复制的key粘贴至此）<br><img src="img/4.png" alt="img4">  </p>
 <p>在Git Bash中检测GitHub公钥设置是否成功，输入<code>ssh git@github.com</code>：<br><img src="img/5.png" alt="img5">  </p>
 <p>如上则说明成功。因为git和github间传输使用ssh加密，ssh是非对称加密算法，由一对公钥+私钥对来完成加解密（公钥加密 私钥可以解密，私钥加密 公钥可以解密），本地使用私钥加密传输到github端再用刚才添加的公钥解密。 </p>
-<h5 id="第二步：-注册GitHub-创建一个新的repository"><a href="#第二步：-注册GitHub-创建一个新的repository" class="headerlink" title="第二步： 注册GitHub 创建一个新的repository"></a>第二步： 注册GitHub 创建一个新的repository</h5><p>登录<a href="https://github.com/" target="_blank" rel="noopener">github官网</a>点击sign up注册<br><img src="img/6.png" alt="img6">  </p>
+<h4 id="第二步：-注册GitHub-创建一个新的repository"><a href="#第二步：-注册GitHub-创建一个新的repository" class="headerlink" title="第二步： 注册GitHub 创建一个新的repository"></a>第二步： 注册GitHub 创建一个新的repository</h4><p>登录<a href="https://github.com/" target="_blank" rel="noopener">github官网</a>点击sign up注册<br><img src="img/6.png" alt="img6">  </p>
 <p>注册成功后点击GitHub中的New repository创建新仓库，仓库名应该为：用户名.github.io 这个用户名使用你的GitHub帐号名称代替，这是固定写法，比如我的仓库名为：<br><img src="img/7.png" alt="img7">  </p>
-<h5 id="第三步-PC端安装Node-js"><a href="#第三步-PC端安装Node-js" class="headerlink" title="第三步 PC端安装Node.js"></a>第三步 PC端安装Node.js</h5><p>去<a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">node.js官网</a>下载安装Node.js，注意环境变量配置，win10应该是自动添加的，然后检测是否安装成功输入<code>node -v</code><br><img src="img/8.png" alt="img8">  </p>
-<p>输入 <code>npm -v</code> 检测node.js版本<br><img src="img/9.png" alt="img9"></p>
+<h4 id="第三步-PC端安装Node-js"><a href="#第三步-PC端安装Node-js" class="headerlink" title="第三步 PC端安装Node.js"></a>第三步 PC端安装Node.js</h4><p>去<a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">node.js官网</a>下载安装Node.js，注意环境变量配置，win10应该是自动添加的，然后检测是否安装成功输入<code>node -v</code><br><img src="img/8.png" alt="img8">  </p>
+<p>输入 <code>npm -v</code>检测node.js版本<br><img src="img/9.png" alt="img9"><br>如果上图所示则安装成功。</p>
 
 
                 
